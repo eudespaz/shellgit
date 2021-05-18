@@ -1,26 +1,28 @@
 #!/bin/bash
 #Autor: Eudes Paz (eudespaz@live.com)
 #SCRIPT PARA ADICIONAR OS PROJETOS PARA O GITHUB
-# 31/07/2019 hora 17:21 
+#31/07/2019 17:21H
+#ATUALIZACAO EM 17/05/2021 22:32H
 
 clear 
 
 menu() {
 echo "|------- SISTEMA INICIADO --------|"
-echo "(1) INVIAR UM PROJETO NOVO"
+echo "(1) ENVIAR UM PROJETO NOVO"
 echo "(2) ATUALIZAR O PROJETO"
-echo "(3) CONFIGURAR O GIT"
-echo "(4) SAIR DO SCRIPT"
+echo "(3) CONFIGURAR O GITHUB"
+echo "(4) SAIR DO SISTEMA"
 echo "|---------------------------------|"
 
-read perguntar
+date
+read -p "Digite a opção deseja: " perguntar
 
 case $perguntar in
 	1) projetoNovo ;;
 	2) atualizarProjeto ;;
 	3) configgit ;;
 	4) exit; echo "Até Logo" ;;
-	*) read -p "COMANDO INVALIDO, DIGITE NOVAMENTE"; clear ; menu;
+	*) read -p "COMANDO INVALIDO, DIGITE NOVAMENTE "; clear ; menu;
 
 esac
 

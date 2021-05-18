@@ -9,7 +9,8 @@ menu() {
 echo "|------- SISTEMA INICIADO --------|"
 echo "(1) INVIAR UM PROJETO NOVO"
 echo "(2) ATUALIZAR O PROJETO"
-echo "(3) SAIR DO SCRIPT"
+echo "(3) CONFIGURAR O GIT"
+echo "(4) SAIR DO SCRIPT"
 echo "|---------------------------------|"
 
 read perguntar
@@ -17,8 +18,9 @@ read perguntar
 case $perguntar in
 	1) projetoNovo ;;
 	2) atualizarProjeto ;;
-	3) exit; echo "Até Logo" ;;
-	*) echo "COMANDO INVALIDO, DIGITE NOVAMENTE"; clear ; menu;
+	3) configgit ;;
+	4) exit; echo "Até Logo" ;;
+	*) read -p "COMANDO INVALIDO, DIGITE NOVAMENTE"; clear ; menu;
 
 esac
 
@@ -76,4 +78,16 @@ git push
  echo "Voltando para o menu principal"; clear ; menu;
 }
 
+configgit(){
+
+echo "configurando usu�rio EUDES"
+
+git config --global user.email "eudespaz@live.com"
+
+git config --global user.name "eudespaz"
+
+echo "Voltando para o menu principal"; clear ; menu;
+
+
+}
 menu

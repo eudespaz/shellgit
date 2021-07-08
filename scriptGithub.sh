@@ -11,7 +11,7 @@ echo "|------- SISTEMA INICIADO --------|"
 echo "(1) ENVIAR UM PROJETO NOVO"
 echo "(2) ATUALIZAR O PROJETO"
 echo "(3) CONFIGURAR O GITHUB"
-echo "(4) SAIR DO SISTEMA"
+echo "(0) SAIR DO SISTEMA"
 echo "|---------------------------------|"
 
 date
@@ -21,7 +21,7 @@ case $perguntar in
 	1) projetoNovo ;;
 	2) atualizarProjeto ;;
 	3) configgit ;;
-	4) exit; echo "Até Logo" ;;
+	0) exit; echo "Até Logo" ;;
 	*) read -p "COMANDO INVALIDO, DIGITE NOVAMENTE "; clear ; menu;
 
 esac

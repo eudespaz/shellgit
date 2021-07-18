@@ -71,8 +71,8 @@ git add .
 read -p "Digite a mensagem explicativa: " mensagem
 git commit -m "$mensagem"
 
-echo "Listar histórico de commits:" 
-git log --oneline
+#echo "Listar histórico de commits:" 
+#git log --oneline
 
 echo "Salvar projeto atualizado no seu Github (push)"
 git push

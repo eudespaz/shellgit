@@ -39,7 +39,7 @@ read -p "Digite o endereço: " https
 
 git remote add origin  $https
 
-echo"Atualiza seu repositório local em relação ao repositório remoto"
+echo "Atualiza seu repositório local em relação ao repositório remoto"
 
 git pull origin master
 

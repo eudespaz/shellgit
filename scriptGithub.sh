@@ -2,7 +2,7 @@
 #Autor: Eudes Paz (eudespaz@live.com)
 #SCRIPT PARA ADICIONAR OS PROJETOS PARA O GITHUB
 #31/07/2019 17:21H
-#ATUALIZACAO EM 17/05/2021 22:32H
+#ATUALIZACAO EM 11/08/2022
 
 clear 
 
@@ -15,13 +15,13 @@ echo "(0) SAIR DO SISTEMA"
 echo "|---------------------------------|"
 
 date
-read -p "Digite a opção deseja: " perguntar
+read -p "Digite a opcao deseja: " perguntar
 
 case $perguntar in
 	1) projetoNovo ;;
 	2) atualizarProjeto ;;
 	3) configgit ;;
-	0) exit; echo "Até Logo" ;;
+	0) exit; echo "Ate Logo" ;;
 	*) read -p "COMANDO INVALIDO, DIGITE NOVAMENTE "; clear ; menu;
 
 esac
@@ -29,17 +29,17 @@ esac
 }
 projetoNovo(){ 
 
-echo "Inicia um novo repositório local na pasta projeto"
+echo "Inicia um novo repositorio local na pasta projeto"
 
 git init
 
-echo "Associa seu repositório local ao repositório remoto"
+echo "Associa seu repositorio local ao repositorio remoto"
 
-read -p "Digite o endereço: " https
+read -p "Digite o endereco: " https
 
 git remote add origin  $https
 
-echo "Atualiza seu repositório local em relação ao repositório remoto"
+echo "Atualiza seu repositÃ³rio local em relaÃ§Ã£o ao repositÃ³rio remoto"
 
 git pull origin master
 
@@ -47,11 +47,11 @@ echo "Adiciona todos arquivos ao stage"
 
 git add .
 
-echo "Salva uma nova versão do projeto"
+echo "Salva uma nova versÃ£o do projeto"
 
 git commit -m "Projeto criado"
 
-echo "Envia o repositório local para o repositório remoto"
+echo "Envia o repositÃ³rio local para o repositÃ³rio remoto"
 
 git push -u origin master
 
@@ -61,7 +61,7 @@ git push -u origin master
 
 atualizarProjeto(){
 
-echo "Commitar as mudanças feitas no projeto"
+echo "Commitar as mudanÃ§as feitas no projeto"
 echo "Verificar arquivos:"
 git status
 
@@ -71,7 +71,7 @@ git add .
 read -p "Digite a mensagem explicativa: " mensagem
 git commit -m "$mensagem"
 
-#echo "Listar histórico de commits:" 
+#echo "Listar histÃ³rico de commits:" 
 #git log --oneline
 
 echo "Salvar projeto atualizado no seu Github (push)"
@@ -82,14 +82,21 @@ git push
 
 configgit(){
 
-echo "configurando usu�rio EUDES"
+echo "configurando GitHub"
 
-git config --global user.email "eudespaz@live.com"
+read -p "Digite seu E-mail do Git: " email
 
-git config --global user.name "eudespaz"
+git config --global user.email "$email"
+
+echo "$email"
+
+read -p "Digite seu usuario do Git: " user
+
+git config --global user.name "$user"
+
+echo "$user"
 
 echo "Voltando para o menu principal"; clear ; menu;
-
 
 }
 menu
